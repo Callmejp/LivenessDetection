@@ -5,13 +5,13 @@ import numpy as np
 from Config import CHANNEL_SIZE
 
 
-def read_data(prefix_path):
+def read_data(prefix_path, flag=15):
     print("读取路径: " + prefix_path)
     sample_classification = ["pos_picture\\", "neg_picture\\"]
     result = []
     pos_pic_cnt = 0
     for index, classification in enumerate(sample_classification):
-        for dir_num in range(1, 11):
+        for dir_num in range(1, flag):
             # e.g. train\\pos_picture\\1
             target_path = prefix_path + classification + str(dir_num)
             images = os.listdir(target_path)
@@ -26,7 +26,8 @@ def read_data(prefix_path):
                     result.append(buffer)
                     buffer.pop(0)
                 img = Image.open(target_path + "\\" + str(image_index) + ".bmp")
-                buffer.append(np.array(img, dtype=float))
+                # Normalization
+                buffer.append(np.array(img, dtype=float) / 255.0)
         if index == 0:
             pos_pic_cnt = len(result)
     # ---------------------------------------------

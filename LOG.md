@@ -12,6 +12,14 @@ Test Accuracy: 50%
 
 1. Reduce the interval so that we can get more picture from one video.
 2. Save the 128 X 128 instead of 64 X 64(Enlarget the picture).
-3. Adjust the network stucture.
+3. Adjust the network stucture correspondingly.
 
 Test Accuracy: 52.14%
+
+
+### Third Try(Detail)
+
+1. Normalization(52.14%)
+2. Six Frames(52.19%)
+3. Adjust the DNN(52.19%)
+4. Seven Frames(52.25%)

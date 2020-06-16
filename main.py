@@ -9,7 +9,7 @@ from model import get_model
 
 if __name__ == "__main__":
     x, y = read_data("train\\")
-    test_x, test_y = read_data("test\\")
+    test_x, test_y = read_data("test\\", 7)
     # print(y)
     model = get_model()
     model.compile(loss='binary_crossentropy',  optimizer='adam', metrics = ['accuracy'])
