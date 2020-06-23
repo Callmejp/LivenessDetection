@@ -23,3 +23,5 @@ Test Accuracy: 52.14%
 2. Six Frames(52.19%)
 3. Adjust the DNN(52.19%)
 4. Seven Frames(52.25%)
+5. More Dataset(~54%)
+   

@@ -2,15 +2,20 @@ import os
 from PIL import Image
 import numpy as np
 
-from Config import CHANNEL_SIZE
+from Config import CHANNEL_SIZE, IMG_SIZE
 
 
-def read_data(prefix_path, flag=15):
+def read_data(prefix_path, pos_num=11, neg_num=11):
     print("读取路径: " + prefix_path)
     sample_classification = ["pos_picture\\", "neg_picture\\"]
     result = []
     pos_pic_cnt = 0
     for index, classification in enumerate(sample_classification):
+        if index == 0:
+            flag = pos_num
+        else:
+            flag = neg_num
+
         for dir_num in range(1, flag):
             # e.g. train\\pos_picture\\1
             target_path = prefix_path + classification + str(dir_num)
@@ -23,7 +28,9 @@ def read_data(prefix_path, flag=15):
             for image_index in range(number_of_images):
                 # channel: CHANNEL_SIZE
                 if len(buffer) >= CHANNEL_SIZE:
-                    result.append(buffer)
+                    temp = np.array(buffer)
+                    temp = temp.reshape(CHANNEL_SIZE, IMG_SIZE, IMG_SIZE, 1)
+                    result.append(temp)
                     buffer.pop(0)
                 img = Image.open(target_path + "\\" + str(image_index) + ".bmp")
                 # Normalization
