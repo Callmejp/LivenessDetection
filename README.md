@@ -11,9 +11,13 @@
 
 1. `haarcascade_frontalface_default.xml`: `Lib` that included in `OpenCV`. We use it to extract the face in the picture.
 2. `data_translate.py`: extract the pictures from the video and normalize them.
-3. `data_supply.py`: read the images and combine five continuous of them into one 3-dimension pictures.
+3. `data_supply.py`: read the images and combine six continuous of them into one 6-dimension pictures.
 4. `model.py`: define the network structure.
 5. `main.py`: entrace.
 
 
 You can find our specific process in the `LOG.md`.
+
+### Best Result
+
+![result](result.png)

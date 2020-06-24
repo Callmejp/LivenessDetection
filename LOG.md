@@ -24,4 +24,9 @@ Test Accuracy: 52.14%
 3. Adjust the DNN(52.19%)
 4. Seven Frames(52.25%)
 5. More Dataset(~54%)
+
+Finally, we found that it's the output vector's form which impedes the training process.
+We change the (single output & binary_crossentropy) to (double outputs & categorical_crossentropy).
+
+The latest repository stores the best model we found.
    
