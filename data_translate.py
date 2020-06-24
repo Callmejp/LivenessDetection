@@ -28,7 +28,7 @@ def extract_frame_from_video(path):
  
     # 通过opencv将视频读取到内存中 
     cap = cv2.VideoCapture(path)
-    cur_frame_cnt, pic_cnt, mod = 0, 0, 3
+    cur_frame_cnt, pic_cnt, mod = 0, 0, 2
     while(True):
         cur_frame_cnt += 1
         ret, frame = cap.read()

@@ -27,7 +27,7 @@ from Config import IMG_SIZE, CHANNEL_SIZE
 
 def get_model():
     model = Sequential()
-    model.add(Conv3D(16, kernel_size=(3, 3, 3),
+    model.add(Conv3D(32, kernel_size=(3, 3, 3),
                     activation='relu',
                     input_shape=(CHANNEL_SIZE, IMG_SIZE, IMG_SIZE, 1)))
     model.add(Conv3D(32, (3, 3, 3), data_format='channels_first', activation='relu'))
